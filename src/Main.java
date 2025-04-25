@@ -12,6 +12,15 @@ public class Main {
      int[]result =new int[size];
      return result;
  }
+       // Merge Sort function
+    public static void mergesort(int[] a, int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
+            mergesort(a, low, mid);
+            mergesort(a, mid + 1, high);
+            merge(a, low, mid, high);
+        }
+    }
       public static void merge(int[] a, int low, int mid, int high) {
         int n1 = mid - low + 1;
         int n2 = high - mid;
